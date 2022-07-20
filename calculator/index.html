@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculator</title>
+  <style>
+    .main {
+      border: 5px solid black;
+      text-align: center;
+      height: 500px;
+      width: 500px;
+      background-color: rgb(221, 199, 241);
+
+    }
+
+    h1 {
+      text-align: center;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <h1>Simple Calculator</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label><b>Enter first number</b></label>
+      <td><input type="text" name="num1"></td><br><br>
+
+      <label><b>Select Operator</b></label>
+      <td></td><select name="opr" style="padding-left: 150px;">
+
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mul">*</option>
+        <option value="div">/</option>
+      </select>
+      <br><br>
+      <label style="padding-right: 2px ;"><b>Enter second number</b></label>
+      <input type="text" name="num2"><br><br>
+      <button type="submit">Equal</button>
+
+      <br><br>
+      <hr>
+      <label><b>
+          <h2>Output</h2>
+        </b></label>
+      <input type="text" value="{{c}}"><br><br>
+
+
+    </form>
+  </div>
+</body>
+
+</html>
